@@ -1,0 +1,45 @@
+body,
+html {
+  height: 100vh;
+}
+
+#board div {
+  height: 101.4%;
+}
+
+i {
+  font-size: xx-large;
+}
+
+.O,
+.X {
+  display: flex; /* ensures that text obeys flex properties */
+  justify-content: center; /* centers text horizontally */
+  align-items: center; /* centers text vertically */
+  text-align: center; /* centers text in the traditional sense */
+  height: 100%; /* takes up all available height of parent */
+  margin: 0;
+  font-size: 3vw;
+  pointer-events: none;
+}
+
+.O, .O * {
+  color: royalblue;
+}
+
+.X, .X * {
+  color: tomato;
+}
+
+#board .row * {
+  /*background-color:slategray;*/
+  height: 32%;
+  width: 32%;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
