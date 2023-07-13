@@ -1,13 +1,11 @@
 import { Player } from './classes/player.js';
 
-let Board = $('#board');
 let Boxes = $('#board .row').children().get();
 let WinnerBox = $('#winner');
 let WinnerScores = $('#scores').get();
 let Player1Score = WinnerScores[0];
 let Player2Score = WinnerScores[2];
 
-/*let Solutions = [6, 12, 15, 18, 24]*/;
 let Solutions = [
   [1,2,3],
   [4,5,6],
@@ -44,7 +42,8 @@ class game {
     this.Turn = undefined;
     this.Winner = undefined;
 
-    WinnerBox.empty();
+    WinnerBox.innerHTML = '';
+    
 
     $('#board .row')[0].addEventListener('click', (clicked) => {
       if (!Boxes.includes(clicked.target)) return;
@@ -72,6 +71,12 @@ class game {
     }
   }
 
+  #clearBoxes() {
+    Boxes.forEach(box => {
+      console.log(box);
+    })
+  }
+
   #boxClicked(box) {
     let result = false;
     this.Players.forEach((player) => {
@@ -95,6 +100,7 @@ class game {
     player.Wins++;
 
     $('#winner').append(WinnerElement(player));
+    $('#play').html(`<h1>Play Again</h1>`);
   };
 
   #findWinner() {
@@ -119,4 +125,7 @@ class game {
   }
 
 }
-new game();
+
+document.getElementById('play').addEventListener('click', () => {
+  new game();
+})
