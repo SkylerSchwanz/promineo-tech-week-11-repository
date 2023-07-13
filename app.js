@@ -43,7 +43,7 @@ class game {
     this.Winner = undefined;
 
     WinnerBox.innerHTML = '';
-    
+    this.#clearBoxes();
 
     $('#board .row')[0].addEventListener('click', (clicked) => {
       if (!Boxes.includes(clicked.target)) return;
