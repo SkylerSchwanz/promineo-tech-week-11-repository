@@ -24,14 +24,6 @@ let WinnerElement = function (player) {
   `;
 };
 
-let PlayButton = function () {
-  return `
-    <div id="play" class="btn btn-dark rounded rounded-pill col-sm-6 col-lg-2">
-      <h2>Play Again</h2>
-    </div>
-  `;
-};
-
 let DrawElement = function () {
   return `
   <div class="alert alert-primary col-sm-8 col-lg-3 m-0" role="alert">
@@ -39,9 +31,6 @@ let DrawElement = function () {
   </div>
   `;
 };
-
-/*WinnerBox.empty();
-WinnerBox.append(WinnerElement[0]);*/
 
 class game {
   constructor() {
